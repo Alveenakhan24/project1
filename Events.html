@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 
+            background-color: rgb(220, 52, 175);
+        }
+
+        #box-3 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(190, 229, 33);
+        }
+
+        #box-4 {
+            width: 200px;
+            height: 200px;
+            background-color: rgb(215, 123, 11);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <br>
+    <br>
+    <div id="box-1"></div>
+    <button class="hide">Hide</button>
+    <button class="show">Show</button>
+    <br>
+    <br>
+    <div id="box-2"></div>
+    <button class="toggle">Hide/Show</button>
+    <br>
+    <br>
+    <div id="box-3"></div>
+    <button class="fadein">fadeIn</button>
+    <button class="fadeout">fadeOut</button>
+    <br>
+    <br>
+    <div id="box-4"></div>
+    <button class="toggle">fadeIn/fadeOut</button>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script>
+        $(document).ready()
+        $("#box").mouseenter(function () {
+            $(this).css("background-color", "orange")
+        })
+
+        $("#box").mouseleave(function () {
+            $(this).css("background-color", "green")
+        })
+
+        $("#box").click(function () {
+            $(this).css("background-color", "pink")
+        })
+
+        $("#box").dblclick(function () {
+            $(this).css("background-color", "purple")
+        })
+    </script>
+
+    <script>
+        $(document).ready()
+        $(".hide").click(function () {
+            $("#box-1").hide(2000)
+        }
+        )
+        $(".show").click(function () {
+            $("#box-1").show(2000)
+        }
+        )
+    </script>
+
+    <script>
+        $(document).ready()
+        $(".toggle").click(function () {
+            $("#box-2").toggle(3000)
+        }
+        )
+    </script>
+
+    <script>
+        $(document).ready()
+        $(".fadein").click(function () {
+            $("#box-3").fadeIn(2000)
+        }
+        )
+        $(".fadeout").click(function () {
+            $("#box-3").fadeOut(2000)
+        }
+        )
+    </script>
+
+    <script>
+        $(document).ready()
+        $(".toggle").click(function () {
+            $("#box-4").fadeToggle(3000)
+        }
+        )
+    </script>
+</body>
+
+</html>
